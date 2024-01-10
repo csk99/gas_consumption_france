@@ -4,8 +4,8 @@
 
 
 ## Introduction
-In this project, we aim to predict Gas consumption using machine learning and Gas  data from 2008 (or 2009,2010,customizable) to 2023 available [here](https://github.com/rvm-courses/GasPrices across many stations in France.
-We will also exploit amazing spark capabilities to run machine learning workload under different harware conditions. The first on a single node spark environment where master and slave processes are colocated and also on a cluster in the cloud using Google Cloud Platform.
+In this project, we aim to predict Gas consumption using machine learning and Gas  data from 2008 (or 2009,2010,customizable) to 2023 available [here](https://github.com/rvm-courses/GasPrices) across many stations in France.
+We will also exploit amazing spark capabilities to run machine learning workloads under different harware conditions. Firstly on a local node spark environment where master and slave processes are colocated and also on a cluster in the cloud using Google Cloud Platform.
 
 ### Technologies / Frameworks used 
 * ![Static Badge](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
