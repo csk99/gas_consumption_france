@@ -1,0 +1,25 @@
+base_data_location: data/
+first_year_gas: 2008
+last_year_gas: 2023
+master_ip: None
+year_service_file: 2022
+year_station_file: 2022
+base_url: https://github.com/rvm-courses/GasPrices/raw/master/
+gas_file_parameters:
+  - delimiter: ;
+  - schema: id_pdv int,cp int,pop string,latitude double, longitude double, date  timestamp,id_carburant int ,nom_carburant string, prix double
+
+
+station_file_parameters:
+  - delimiter: '|'
+  - schema: id_pdv int ,cp int,pop string,latitude double,longitude double,adresse string,ville string
+
+service_file_parameters:
+  - delimiter: '|'
+  - schema: id_pdv int,cp int,pop string,latitude double,longitude  double,services string
+
+    
+
+
+
+

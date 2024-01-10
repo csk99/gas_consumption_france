@@ -1,0 +1,6 @@
+test.ipynb
+gas_env/*
+*.gz
+*.csv
+captures/*
+__pycache__/*
