@@ -1,0 +1,1 @@
+This folder will contain the downloaded data once you run the download_data script and run the unzip_files.sh script.
