@@ -55,7 +55,7 @@ chmod +x unzip_files.sh
 
 
 5. Open the report.ipynb notebook and run the cells.<br> 
-*Please choose the python virtual environment you created previously*
+*Please choose the python virtual environment you created previously*<br> 
 This notebook contains our Exploritory data analysis and model training.
 
 

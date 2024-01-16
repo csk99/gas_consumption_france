@@ -13,23 +13,33 @@ def build_files_to_download(configurations):
 
     Args:
     - configurations (dict): A dictionary containing configuration parameters:
-        - 'first_year_gas' (str): The starting year for gas data.
-        - 'last_year_gas' (str): The last year for gas data.
-        - 'year_station_file' (str): The year for station file.
-        - 'year_service_file' (str): The year for service file.
+        - 'first_year_gas' (int): The starting year for gas data.
+        - 'last_year_gas' (int): The last year for gas data.
+        - 'year_station_file' (int): The year for station file.
+        - 'year_service_file' (int): The year for service file.
 
     Returns:
     - list: A list of file names to be downloaded.
     """
 
-    
+    #generate a list of gas files following the pattern
+    #Prix2008,Prix2009,...., 
+    #2008 is starting year and can be changed in the yaml configuration file
+
     files = list(map(lambda i: f'Prix{i}.csv.gz',
                      list(range(
                          configurations['first_year_gas'],
                          configurations['last_year_gas']+1))))
+    
+    #add the station file to be downloaded based on the year provided
     files.append(f'Stations{configurations["year_station_file"]}.csv.gz')
+
+    #add the Services file to be downloaded based on the year provided
     files.append(f'Services{configurations["year_service_file"]}.csv.gz')
+
+    #handle the Prix2022 exception since it doesn't exist on Github
     files.remove('Prix2022.csv.gz')
+    #add its 2 versions manually
     files.append('Prix2022S2.csv.gz')
     files.append('Prix2022S1.csv.gz')
     return files
@@ -42,9 +52,6 @@ def download_file(file):
 
     Args:
     - file (str): The name of the file to be downloaded.
-    - configurations (dict): A dictionary containing configuration parameters:
-        - 'base_url' (str): The base URL for the file download.
-        - 'base_data_location' (str): The base location to save downloaded files.
 
     Returns:
     - None
@@ -56,15 +63,20 @@ def download_file(file):
     Ensure that the 'requests' library is installed to use this function for making HTTP requests.
     """
 
-    # Hint: Consider how the function constructs the URL and destination path using the provided configurations.
-    # Look for the usage of 'base_url' and 'base_data_location' to form the complete URL and file path.
-    # Pay attention to the 'requests' library usage to make an HTTP request and save the downloaded content.
+    #get the base url from the config file 
     base_url = configurations['base_url']
+
+    #get the data destination path from the config file
     destination_path = configurations['base_data_location']
+
+    #create the file url based on both the base_url and the file name
     url = base_url + file
-    try:
+    try:    
+            #make a request to download the file
             response = requests.get(url)
+            #if requests is successful
             if response.status_code == 200:
+                #save the file to the destination path
                 with open(destination_path + file, 'wb') as f:
                     f.write(response.content)
                     print(f'Successfully downloaded {file}')
@@ -72,7 +84,8 @@ def download_file(file):
             print(f'Failed to download {file}')
 
 
-
+#create arguments for our python script
+#especially the config file that is needed
 argparser = argparse.ArgumentParser(
 prog="This program donwloads the required data for the project from a github repository"
 )
@@ -94,6 +107,8 @@ with open(args.config,'r') as f:
 files_to_download = build_files_to_download(configurations)
 print("Downloading...")
 
+
+#download the files using parrelization
 with ThreadPoolExecutor(max_workers=os.cpu_count() - 1) as executor:
     result = executor.map(download_file, files_to_download)
         
