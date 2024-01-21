@@ -1,30 +1,13 @@
 # GAS Consumption prediction in France
 
-
-
-
 ## Introduction
-In this project, we aim to predict Gas consumption using machine learning and Gas  data from 2008 (or 2009,2010,customizable) to 2023 available [here](https://github.com/rvm-courses/GasPrices) across many stations in France.
-We will also exploit amazing spark capabilities to run machine learning workloads under different harware conditions. Firstly on a local node spark environment where master and slave processes are colocated and also on a cluster in the cloud using Google Cloud Platform.
+In this project, we aim to predict Gas consumption using machine learning and Gas  data from 2019 to 2023 available [here](https://github.com/rvm-courses/GasPrices) across many stations in France.
+In this project we use local nodes of Apache Spark where master and slave processes are colocated.
 
 ### Technologies / Frameworks used 
 * ![Static Badge](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 * ![Static Badge](https://img.shields.io/badge/Apache_Spark-FFFFFF?style=for-the-badge&logo=apachespark&logoColor=#E35A16)
 * ![Static Badge](https://img.shields.io/badge/Shell_Script-121011?style=for-the-badge&logo=gnu-bash&logoColor=white)
-
-## Project Description
-*Work in progress*
-
-
-## Working principle
-*Work in progress*
-
-## Running time
-*Work in progress*
-
-
-
-
 
 ## Getting Started
 
@@ -52,7 +35,6 @@ python3 download_data.py -c config.yaml
 ```
 python download_data.py -c config.yaml
 ```    
-
 
 5. Run the following command to unzip the files (in the project folder)
 * For linux users:
