@@ -32,7 +32,18 @@ We will also exploit amazing spark capabilities to run machine learning workload
 
 2. Create a virtual env in the project folder (for help see this [tutorial](https://www.freecodecamp.org/news/how-to-setup-virtual-environments-in-python/))
 
-3. Run the following command to load tha data (in the project folder)
+3. Install the porject's dependencies 
+* For linux users:
+```
+pip3 install -r requirements.txt
+```
+
+* For windows users:
+```
+pip install -r requirements.txt
+```
+
+4. Run the following command to load tha data (in the project folder)
 * For linux users:
 ```
 python3 download_data.py -c config.yaml
@@ -43,7 +54,7 @@ python download_data.py -c config.yaml
 ```    
 
 
-4. Run the following command to unzip the files (in the project folder)
+5. Run the following command to unzip the files (in the project folder)
 * For linux users:
 ```
 chmod +x unzip_files.sh
@@ -54,7 +65,7 @@ chmod +x unzip_files.sh
 *It's a linux shell script*
 
 
-5. Open the report.ipynb notebook and run the cells.<br> 
+6. Open the report.ipynb notebook and run the cells.<br> 
 *Please choose the python virtual environment you created previously*<br> 
 This notebook contains our Exploritory data analysis and model training.
 
