@@ -5,3 +5,4 @@ gas_env/*
 *.csv
 captures/*
 __pycache__/*
+*.python-version
