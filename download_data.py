@@ -20,6 +20,7 @@ def build_files_to_download(configurations):
 
     Returns:
     - list: A list of file names to be downloaded.
+    e.g [prix2019.csv.gz,prix2020.csv.gz,...]
     """
 
     #generate a list of gas files following the pattern

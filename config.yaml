@@ -7,7 +7,7 @@ year_station_file: 2022
 base_url: https://github.com/rvm-courses/GasPrices/raw/master/
 gas_file_parameters:
   - delimiter: ;
-  - schema: id_pdv int,cp int,pop string,latitude double, longitude double, date  timestamp,id_carburant int ,nom_carburant string, prix double
+  - schema: id_pdv int,cp int,pop string,latitude double, longitude double, datetime  timestamp,id_carburant int ,nom_carburant string, prix double
 
 
 station_file_parameters:
